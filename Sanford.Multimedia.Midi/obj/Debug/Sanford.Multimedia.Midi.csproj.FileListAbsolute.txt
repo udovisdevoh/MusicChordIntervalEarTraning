@@ -1,0 +1,50 @@
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.dll
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.pdb
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\bin\Debug\Sanford.Collections.dll
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.dll
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Timers.dll
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\bin\Debug\Sanford.Threading.dll
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\ResolveAssemblyReference.cache
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.UI.DeviceDialog.resources
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.UI.InputDeviceDialog.resources
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.UI.OutputDeviceDialog.resources
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.UI.PianoControlDialog.resources
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.csproj.GenerateResource.Cache
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.dll
+G:\Documents and Settings\Raj Singh\Desktop\CSharpMidiToolkitV5_demo\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\bin\Debug\Sanford.Collections.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Timers.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\bin\Debug\Sanford.Threading.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.csprojResolveAssemblyReference.cache
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.dll.mdb
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.dll.mdb
+D:\anonymous\Documents\Programming\C Sharp\JadeTemple\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\JadeTemple\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\JadeTemple\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\JadeTemple\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\JadeTemple\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.dll.mdb
+D:\anonymous\Documents\Programming\C Sharp\JadeTemple\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.dll.mdb
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Collections.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Timers.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Threading.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\DesertStory\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.csprojResolveAssemblyReference.cache
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Midi.pdb
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Collections.dll
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.dll
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Multimedia.Timers.dll
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\bin\Debug\Sanford.Threading.dll
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.csproj.CoreCompileInputs.cache
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.csproj.CopyComplete
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.dll
+D:\anonymous\Documents\Programming\C Sharp\VirtuoPC\Shared\Sanford.Multimedia.Midi\obj\Debug\Sanford.Multimedia.Midi.pdb
