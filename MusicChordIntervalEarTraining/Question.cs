@@ -11,12 +11,15 @@ namespace MusicChordIntervalEarTraining
     {
         #region Members
         private List<Chord> chords;
+
+        private List<IntervalType> intervals;
         #endregion
 
         #region Constructors
         public Question()
         {
             this.chords = new List<Chord>();
+            this.intervals = new List<IntervalType>();
         }
         #endregion
 
@@ -33,24 +36,29 @@ namespace MusicChordIntervalEarTraining
         public void AddChord(Chord chord)
         {
             this.chords.Add(chord);
+
+            if (this.chords.Count > 1)
+            {
+                Chord previousChord = this.chords[this.chords.Count - 2];
+                IntervalType interval = this.GetIntervalType(previousChord, chord);
+                this.intervals.Add(interval);
+            }
         }
 
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
-            Chord previousChord = null;
+            int chordIndex = 0;
             foreach (Chord chord in chords)
             {
                 stringBuilder.AppendLine(chord.ToString());
 
-                if (previousChord != null)
+                if (chordIndex > 0)
                 {
-                    IntervalType intervalType = this.GetIntervalType(previousChord, chord);
-
-                    stringBuilder.AppendLine(intervalType.ToString());
+                    stringBuilder.AppendLine(this.intervals[chordIndex - 1].ToString());
                 }
 
-                previousChord = chord;
+                ++chordIndex;
             }
 
             return stringBuilder.ToString();
