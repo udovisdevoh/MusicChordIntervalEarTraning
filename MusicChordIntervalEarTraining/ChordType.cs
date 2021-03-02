@@ -16,6 +16,7 @@ namespace MusicChordIntervalEarTraining
         Diminished7 = 5,
         Augmented = 6,
         HalfDiminished7 = 7,
-        DiminishedTriad = 8
+        DiminishedTriad = 8,
+        Unknown = 9
     }
 }

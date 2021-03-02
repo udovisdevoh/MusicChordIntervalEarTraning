@@ -14,6 +14,9 @@ namespace MusicChordIntervalEarTraining
 
                 Console.WriteLine(question);
 
+                Console.WriteLine("Intervals: 0, 2b, 2, 3m, 3M, 4, 4A, 5, 6b, 6, 7m, 7M");
+                Console.WriteLine("Chord types: M, m, M7, m7, 7, dim7, aug, hdim, dim");
+
                 Console.ReadLine();
             };
         }
