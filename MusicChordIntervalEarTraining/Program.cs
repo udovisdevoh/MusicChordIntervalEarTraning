@@ -6,7 +6,16 @@ namespace MusicChordIntervalEarTraining
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            QuestionBuilder questionBuilder = new QuestionBuilder(new Random(), 2, false, false);
+
+            while (true)
+            {
+                Question question = questionBuilder.BuildQuestion();
+
+                Console.WriteLine(question);
+
+                Console.ReadLine();
+            };
         }
     }
 }
