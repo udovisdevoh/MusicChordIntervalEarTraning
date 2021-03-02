@@ -26,9 +26,45 @@ namespace MusicChordIntervalEarTraining
 
         private bool TryParse(string token, out ChordType chordType)
         {
-            token = token.ToUpperInvariant();
+            token = token.Trim();
             chordType = ChordType.Unknown;
-            if (token.ToUpperInvariant() == "AUG")
+
+            if (token == "M")
+            {
+                chordType = ChordType.Major;
+                return true;
+            }
+            else if (token == "M7")
+            {
+                chordType = ChordType.Major7;
+                return true;
+            }
+            else if (token == "7M")
+            {
+                chordType = ChordType.Major7;
+                return true;
+            }
+            else if (token == "m")
+            {
+                chordType = ChordType.Minor;
+                return true;
+            }
+            else if (token == "m7")
+            {
+                chordType = ChordType.Minor7;
+                return true;
+            }
+            else if (token == "7m")
+            {
+                chordType = ChordType.Minor7;
+                return true;
+            }
+            else if (token == "7")
+            {
+                chordType = ChordType.Dominant7;
+                return true;
+            }
+            else if (token.ToUpperInvariant() == "AUG")
             {
                 chordType = ChordType.Augmented;
                 return true;
@@ -55,6 +91,32 @@ namespace MusicChordIntervalEarTraining
             {
                 chordType = ChordType.Dominant7;
                 return true;
+            }
+            else if (token.ToUpperInvariant().Contains("MAJ"))
+            {
+                if (token.Contains("7"))
+                {
+                    chordType = ChordType.Major7;
+                    return true;
+                }
+                else
+                {
+                    chordType = ChordType.Major;
+                    return true;
+                }
+            }
+            else if (token.ToUpperInvariant().Contains("MIN"))
+            {
+                if (token.Contains("7"))
+                {
+                    chordType = ChordType.Minor7;
+                    return true;
+                }
+                else
+                {
+                    chordType = ChordType.Minor;
+                    return true;
+                }
             }
 
             return false;
