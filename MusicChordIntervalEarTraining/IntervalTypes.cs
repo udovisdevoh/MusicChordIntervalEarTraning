@@ -8,7 +8,7 @@ namespace MusicChordIntervalEarTraining
 {
     public enum IntervalType
     {
-        UnisonOcave = 0,
+        UnisonOctave = 0,
         MinorSecond = 1,
         MajorSecond = 2,
         MinorThird = 3,
@@ -20,5 +20,6 @@ namespace MusicChordIntervalEarTraining
         Sixth = 9,
         FlatSeventh = 10,
         MajorSeventh = 11,
+        Unknown = 12,
     }
 }

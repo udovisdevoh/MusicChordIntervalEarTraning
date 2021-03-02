@@ -40,7 +40,7 @@ namespace MusicChordIntervalEarTrainingTests
         [InlineData("7dOminant", ChordType.Dominant7)]
         [InlineData("dOm7", ChordType.Dominant7)]
         [InlineData("dOminant7", ChordType.Dominant7)]
-        public void Test1(string token, ChordType expectedChordType)
+        public void Test(string token, ChordType expectedChordType)
         {
             // Arrange
             ChordTypeParser chordTypeParser = new ChordTypeParser();
