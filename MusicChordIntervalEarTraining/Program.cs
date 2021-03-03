@@ -8,6 +8,7 @@ namespace MusicChordIntervalEarTraining
         {
             QuestionBuilder questionBuilder = new QuestionBuilder(new Random(), 2, false, false);
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
+            MusicPlayer musicPlayer = new MusicPlayer();
 
             while (true)
             {
