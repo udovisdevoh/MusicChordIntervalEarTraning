@@ -126,14 +126,14 @@ namespace MusicChordIntervalEarTraining
                         Console.WriteLine("WRONG, it is " + progression.ToString());
                     }
                 }
-                else
+                else if (!isShowAnswerFirst)
                 {
                     Console.WriteLine("It was");
                     Console.WriteLine(progression.ToString());
-                }
 
-                Console.WriteLine("Ready? press enter to continue");
-                Console.ReadLine();
+                    Console.WriteLine("Ready? press enter to continue");
+                    Console.ReadLine();
+                }
 
                 Console.WriteLine("");
                 Console.WriteLine("");
