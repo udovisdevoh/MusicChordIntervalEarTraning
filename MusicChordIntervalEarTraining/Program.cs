@@ -14,15 +14,20 @@ namespace MusicChordIntervalEarTraining
             QuestionBuilder questionBuilder = new QuestionBuilder(random, 2, false, false);
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
-            // Space, mixolydian b6 hindu or Major3
+            // Space, mixolydian b6 hindu or Major3 or Ionadimic
             ConfusionManager confusionList = new ConfusionManager();
             confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Major),
-                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Major));
+                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Minor));
 
             // Perfect fifth or perfect fourth
             confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
+
+            // Phrygian or Batman 1989 reversed phrygian dominant viib
+            confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MinorSecond, ChordType.Major),
+                new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Major));
 
             // Ionadimic or Relative minor space
             confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Minor),
@@ -35,8 +40,9 @@ namespace MusicChordIntervalEarTraining
                 new ProgressionType(ChordType.Minor, IntervalType.MinorThird, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.UnisonOctave, ChordType.Major));
 
-            // Time reversed ultraphrygian minor or vader
+            // Time reversed ultraphrygian minor, ultraphrygian minor or vader
             confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSeventh, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.MinorSecond, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.FlatSixth, ChordType.Minor));
 
             // Midgar or evil danger
@@ -48,6 +54,10 @@ namespace MusicChordIntervalEarTraining
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Major));
+
+            // Dorian VI or dorian ii
+            confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Major),
+                new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor));
 
             // Mixolydian v or plagal
             confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Minor),
