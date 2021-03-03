@@ -59,6 +59,9 @@ namespace MusicChordIntervalEarTraining
                     Console.WriteLine("It was " + progression.ToString());
                 }
 
+                Console.WriteLine("Ready? press enter to continue");
+                Console.ReadLine();
+
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
