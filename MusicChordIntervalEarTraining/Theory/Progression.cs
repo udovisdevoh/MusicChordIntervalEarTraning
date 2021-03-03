@@ -63,6 +63,11 @@ namespace MusicChordIntervalEarTraining
                 if (chordIndex > 0)
                 {
                     stringBuilder.AppendLine(this.intervals[chordIndex - 1].ToString());
+                    string modalName = this.GetModalName(chord.ChordType, this.intervals[chordIndex - 1], chords[chordIndex - 1].ChordType);
+                    if (!string.IsNullOrWhiteSpace(modalName))
+                    {
+                        stringBuilder.AppendLine(modalName);
+                    }
                 }
 
                 ++chordIndex;
@@ -86,6 +91,36 @@ namespace MusicChordIntervalEarTraining
             }
 
             return (IntervalType)distance;
+        }
+
+        private string GetModalName(ChordType chordType1, IntervalType intervalType, ChordType chordType2)
+        {
+            if (IsMajor(chordType1) && IsMajor(chordType2))
+            { 
+                if (intervalType == IntervalType.UnisonOctave)
+                {
+                    return "Major unison";
+                }
+            }
+            else if (IsMinor(chordType1) && IsMinor(chordType2))
+            {
+                if (intervalType == IntervalType.UnisonOctave)
+                {
+                    return "Minor unison";
+                }
+            }
+
+            return string.Empty;
+        }
+
+        private bool IsMajor(ChordType chordType)
+        {
+            return chordType == ChordType.Major || chordType == ChordType.Major7 || chordType == ChordType.Dominant7;
+        }
+
+        private bool IsMinor(ChordType chordType)
+        {
+            return chordType == ChordType.Minor || chordType == ChordType.Minor7;
         }
     }
 }
