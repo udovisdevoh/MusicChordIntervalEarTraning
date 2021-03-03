@@ -39,19 +39,25 @@ namespace MusicChordIntervalEarTraining
                     break;
                 }
 
-                Progression parsedInput = inputParser.Parse(input, progression.PitchOffset);
-
-                Console.WriteLine("Parsed as " + parsedInput.ToString());
-
-                if (progression.ToString() == parsedInput.ToString())
+                if (!string.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine("MATCH!");
+                    Progression parsedInput = inputParser.Parse(input, progression.PitchOffset);
+
+                    Console.WriteLine("Parsed as " + parsedInput.ToString());
+
+                    if (progression.ToString() == parsedInput.ToString())
+                    {
+                        Console.WriteLine("MATCH!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("WRONG, it is " + progression.ToString());
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("WRONG, it is " + progression.ToString());
+                    Console.WriteLine("It was " + progression.ToString());
                 }
-
 
                 Console.WriteLine("");
                 Console.WriteLine("");

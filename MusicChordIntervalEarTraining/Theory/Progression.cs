@@ -101,12 +101,202 @@ namespace MusicChordIntervalEarTraining
                 {
                     return "Major unison";
                 }
+                else if (intervalType == IntervalType.MinorSecond)
+                {
+                    return "Phrygian dominant";
+                }
+                else if (intervalType == IntervalType.MajorSecond)
+                {
+                    return "Lydian";
+                }
+                else if (intervalType == IntervalType.MinorThird)
+                {
+                    return "Blues / Rock IIIb";
+                }
+                else if (intervalType == IntervalType.MajorThird)
+                {
+                    return "Creep / Santeria";
+                }
+                else if (intervalType == IntervalType.PerfectFourth)
+                {
+                    return "Plagal";
+                }
+                else if (intervalType == IntervalType.AugmentedFourthDiminishedFifthTritone)
+                {
+                    return "Petruskha / space";
+                }
+                else if (intervalType == IntervalType.PerfectFifth)
+                {
+                    return "Perfect cadence";
+                }
+                else if (intervalType == IntervalType.FlatSixth)
+                {
+                    return "Mixolydian b6 (Hindu) / Mario / Blues / Rock VIb";
+                }
+                else if (intervalType == IntervalType.Sixth)
+                {
+                    return "Picardy 3rd";
+                }
+                else if (intervalType == IntervalType.FlatSeventh)
+                {
+                    return "Mixolydian b7";
+                }
+                else if (intervalType == IntervalType.MajorSeventh)
+                {
+                    return "Time reversed phrygian dominant";
+                }
             }
             else if (IsMinor(chordType1) && IsMinor(chordType2))
             {
                 if (intervalType == IntervalType.UnisonOctave)
                 {
                     return "Minor unison";
+                }
+                else if (intervalType == IntervalType.MinorSecond)
+                {
+                    return "Ultraphrygian minor";
+                }
+                else if (intervalType == IntervalType.MajorSecond)
+                {
+                    return "Dorian minor ii";
+                }
+                else if (intervalType == IntervalType.MinorThird)
+                {
+                    return "Minor blues";
+                }
+                else if (intervalType == IntervalType.MajorThird)
+                {
+                    return "Time reversed vader";
+                }
+                else if (intervalType == IntervalType.PerfectFourth)
+                {
+                    return "Aeolian iv";
+                }
+                else if (intervalType == IntervalType.AugmentedFourthDiminishedFifthTritone)
+                {
+                    return "Evil danger";
+                }
+                else if (intervalType == IntervalType.PerfectFifth)
+                {
+                    return "Aeolian v";
+                }
+                else if (intervalType == IntervalType.FlatSixth)
+                {
+                    return "Vader";
+                }
+                else if (intervalType == IntervalType.Sixth)
+                {
+                    return "Midgar";
+                }
+                else if (intervalType == IntervalType.FlatSeventh)
+                {
+                    return "Phrygian viib";
+                }
+                else if (intervalType == IntervalType.MajorSeventh)
+                {
+                    return "Time reversed 'ultraphrygian minor'";
+                }
+            }
+            else if (IsMajor(chordType1) && IsMinor(chordType2))
+            {
+                if (intervalType == IntervalType.UnisonOctave)
+                {
+                    return "Major to parallel minor";
+                }
+                else if (intervalType == IntervalType.MinorSecond)
+                {
+                    return "Ultraphrygian major";
+                }
+                else if (intervalType == IntervalType.MajorSecond)
+                {
+                    return "Ionian/Mixolydian minor ii";
+                }
+                else if (intervalType == IntervalType.MinorThird)
+                {
+                    return "Major to relative minor of space / petrushka chord";
+                }
+                else if (intervalType == IntervalType.MajorThird)
+                {
+                    return "A day in the life";
+                }
+                else if (intervalType == IntervalType.PerfectFourth)
+                {
+                    return "Minor plagal";
+                }
+                else if (intervalType == IntervalType.AugmentedFourthDiminishedFifthTritone)
+                {
+                    return "Ionadimic";
+                }
+                else if (intervalType == IntervalType.PerfectFifth)
+                {
+                    return "Mixolydian v";
+                }
+                else if (intervalType == IntervalType.FlatSixth)
+                {
+                    return "Augmented (major to minor)";
+                }
+                else if (intervalType == IntervalType.Sixth)
+                {
+                    return "Relative minor (sixth)";
+                }
+                else if (intervalType == IntervalType.FlatSeventh)
+                {
+                    return "Phrygian dominant viib";
+                }
+                else if (intervalType == IntervalType.MajorSeventh)
+                {
+                    return "Lydian MAJ7th minor 'promenade sur mars'";
+                }
+            }
+            else if (IsMinor(chordType1) && IsMajor(chordType2))
+            {
+                if (intervalType == IntervalType.UnisonOctave)
+                {
+                    return "Minor to parallel major";
+                }
+                else if (intervalType == IntervalType.MinorSecond)
+                {
+                    return "Phrygian";
+                }
+                else if (intervalType == IntervalType.MajorSecond)
+                {
+                    return "Batman 1989";
+                }
+                else if (intervalType == IntervalType.MinorThird)
+                {
+                    return "Minor to relative major";
+                }
+                else if (intervalType == IntervalType.MajorThird)
+                {
+                    return "Augmented (minor to major)";
+                }
+                else if (intervalType == IntervalType.PerfectFourth)
+                {
+                    return "Dorian IV";
+                }
+                else if (intervalType == IntervalType.AugmentedFourthDiminishedFifthTritone)
+                {
+                    return "Thacrimic";
+                }
+                else if (intervalType == IntervalType.PerfectFifth)
+                {
+                    return "Harmonic minor perfect cadence";
+                }
+                else if (intervalType == IntervalType.FlatSixth)
+                {
+                    return "Epic b6";
+                }
+                else if (intervalType == IntervalType.Sixth)
+                {
+                    return "Time reversed 'major to relative minor of space / petrushka chord'";
+                }
+                else if (intervalType == IntervalType.FlatSeventh)
+                {
+                    return "Deceptive cadence";
+                }
+                else if (intervalType == IntervalType.MajorSeventh)
+                {
+                    return "Batman 2008";
                 }
             }
 
