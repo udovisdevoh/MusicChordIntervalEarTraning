@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MusicChordIntervalEarTraining
 {
-    public class Question : IEnumerable<Chord>
+    public class Progression : IEnumerable<Chord>
     {
         #region Members
         private List<Chord> chords;
@@ -16,10 +16,17 @@ namespace MusicChordIntervalEarTraining
         #endregion
 
         #region Constructors
-        public Question()
+        public Progression()
         {
             this.chords = new List<Chord>();
             this.intervals = new List<IntervalType>();
+        }
+        #endregion
+
+        #region Properties
+        public int PitchOffset
+        {
+            get { return (int)this.chords[0].NoteType; }
         }
         #endregion
 

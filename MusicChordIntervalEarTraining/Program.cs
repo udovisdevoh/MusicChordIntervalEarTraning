@@ -7,10 +7,11 @@ namespace MusicChordIntervalEarTraining
         static void Main(string[] args)
         {
             QuestionBuilder questionBuilder = new QuestionBuilder(new Random(), 2, false, false);
+            InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
             while (true)
             {
-                Question question = questionBuilder.BuildQuestion();
+                Progression question = questionBuilder.BuildQuestion();
 
                 Console.WriteLine(question);
 
@@ -20,32 +21,29 @@ namespace MusicChordIntervalEarTraining
 
                 string input = Console.ReadLine();
 
-                input = SanitizeInput(input);
-
-                if (input.ToUpperInvariant() == "EXIT")
+                if (input.ToUpperInvariant().Contains("EXIT"))
                 {
                     break;
                 }
+
+                Progression parsedInput = inputParser.Parse(input, question.PitchOffset);
+
+                Console.WriteLine("Parsed as " + parsedInput.ToString());
+
+                if (question.ToString() == parsedInput.ToString())
+                {
+                    Console.WriteLine("MATCH!");
+                }
+                else
+                {
+                    Console.WriteLine("WRONG, it is " + question.ToString());
+                }
+
 
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
             };
-        }
-
-        private static string SanitizeInput(string input)
-        {
-            input = input.Replace("-", " ");
-            input = input.Replace("\t", " ");
-            input = input.Replace("\r", " ");
-            input = input.Replace("\n", " ");
-
-            while (input.Contains("  "))
-            {
-                input = input.Replace("  ", " ");
-            }
-
-            return input;
         }
     }
 }

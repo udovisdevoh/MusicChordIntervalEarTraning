@@ -29,9 +29,9 @@ namespace MusicChordIntervalEarTraining
         }
         #endregion
 
-        public Question BuildQuestion()
+        public Progression BuildQuestion()
         {
-            Question question = new Question();
+            Progression question = new Progression();
 
             for (int currentCount = 0; currentCount < this.chordCount; ++currentCount)
             {
