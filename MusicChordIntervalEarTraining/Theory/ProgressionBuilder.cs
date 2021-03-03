@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MusicChordIntervalEarTraining
 {
-    public class QuestionBuilder
+    public class ProgressionBuilder
     {
         #region Members
         private Random random;
@@ -20,7 +20,7 @@ namespace MusicChordIntervalEarTraining
         #endregion
 
         #region Constructors
-        public QuestionBuilder(Random random, int chordCount, bool isAllowSeventh, bool isAllowAugmentedAndDiminished)
+        public ProgressionBuilder(Random random, int chordCount, bool isAllowSeventh, bool isAllowAugmentedAndDiminished)
         {
             this.random = random;
             this.chordCount = chordCount;
@@ -31,15 +31,41 @@ namespace MusicChordIntervalEarTraining
 
         public Progression BuildProgression()
         {
-            Progression question = new Progression();
+            Progression progression = new Progression();
 
             for (int currentCount = 0; currentCount < this.chordCount; ++currentCount)
             {
                 Chord chord = this.BuildRandomChord();
-                question.AddChord(chord);
+                progression.AddChord(chord);
             }
 
-            return question;
+            return progression;
+        }
+
+        public Progression BuildProgression(ProgressionType[] progressionTypes)
+        {
+            int progressionTypeIndex = random.Next(0, progressionTypes.Length);
+            ProgressionType progressionType = progressionTypes[progressionTypeIndex];
+
+            Progression progression = new Progression();
+
+            int noteType1 = random.Next(0, 12);
+            int noteType2 = noteType1 + (int)progressionType.IntervalType;
+
+            while (noteType2 > 12)
+            {
+                noteType2 -= 12;
+            }
+
+            while (noteType2 < 0)
+            {
+                noteType2 += 12;
+            }
+
+            progression.AddChord(new Chord(progressionType.Chord1Type, (NoteType)noteType1));
+            progression.AddChord(new Chord(progressionType.Chord2Type, (NoteType)noteType2));
+
+            return progression;
         }
 
         private Chord BuildRandomChord()

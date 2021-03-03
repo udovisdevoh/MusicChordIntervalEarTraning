@@ -14,5 +14,10 @@ namespace MusicChordIntervalEarTraining
         {
             similarIntervalTypes.Add(progressionTypes);
         }
+
+        public ProgressionType[] GetProgressionTypes(int index)
+        {
+            return similarIntervalTypes[index];
+        }
     }
 }
