@@ -14,11 +14,12 @@ namespace MusicChordIntervalEarTraining
             QuestionBuilder questionBuilder = new QuestionBuilder(random, 2, false, false);
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
-            // Space, mixolydian b6 hindu or Major3 or Ionadimic
+            // Space, mixolydian b6 hindu or Major3 or phrygian dominant or Ionadimic
             ConfusionManager confusionList = new ConfusionManager();
             confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.MinorSecond, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Minor));
 
             // Perfect fifth or perfect fourth
@@ -32,6 +33,10 @@ namespace MusicChordIntervalEarTraining
             // Ionadimic or Relative minor space
             confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Minor),
                 new ProgressionType(ChordType.Major, IntervalType.MinorThird, ChordType.Minor));
+
+            // Minor 2 or relative minor
+            confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MinorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
 
             // Thacrimic or augmented minor to major or minor to parallel major or time reversed 'major to relative minor of space / petrushka' or minor third third minor third
             confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Major),
@@ -55,9 +60,10 @@ namespace MusicChordIntervalEarTraining
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Major));
 
-            // Dorian VI or dorian ii
+            // Dorian VI or dorian ii or rock IIIb
             confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Major),
-                new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor));
+                new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.MinorThird, ChordType.Major));
 
             // Mixolydian v or plagal
             confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Minor),
