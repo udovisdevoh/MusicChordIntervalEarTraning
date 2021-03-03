@@ -29,7 +29,7 @@ namespace MusicChordIntervalEarTraining
         }
         #endregion
 
-        public Progression BuildQuestion()
+        public Progression BuildProgression()
         {
             Progression question = new Progression();
 
