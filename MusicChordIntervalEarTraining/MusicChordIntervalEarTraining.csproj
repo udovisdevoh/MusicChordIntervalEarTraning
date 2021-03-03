@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sanford.Multimedia.Midi\Sanford.Multimedia.Midi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Sanford.Collections">
       <HintPath>Sanford.Collections.dll</HintPath>
     </Reference>
