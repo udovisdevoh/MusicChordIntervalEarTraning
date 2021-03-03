@@ -22,6 +22,10 @@ namespace MusicChordIntervalEarTraining
 
         private Instrument instrument;
 
+        private const int defaultChordLength = 8;
+
+        private const int noteLength = 200;
+
         public MusicPlayer(Random random, Instrument instrument, int midiChannel)
         {
             this.random = random;
@@ -45,7 +49,7 @@ namespace MusicChordIntervalEarTraining
                 {
                     foreach (Chord chord in progression)
                     {
-                        this.Play(chord);
+                        this.Play(chord, defaultChordLength);
 
                         if (!isPlaying)
                         {
@@ -53,7 +57,8 @@ namespace MusicChordIntervalEarTraining
                         }
                     }
 
-                    this.Play(progression.Last());
+                    this.Play(progression.First(), defaultChordLength + 1);
+                    this.Silence(defaultChordLength - 1);
                 }
 
                 lock (this.playerLock)
@@ -65,22 +70,41 @@ namespace MusicChordIntervalEarTraining
             playerThread.Start();
         }
 
-        private void Play(Chord chord)
+        private void Silence(int chordLength)
+        {
+            for (int index = 0; index < chordLength; ++index)
+            {
+                Thread.Sleep(noteLength);
+                if (!isPlaying)
+                {
+                    return;
+                }
+            }
+        }
+
+        private void Play(Chord chord, int chordLength)
         {
             int noteCount = 0;
-            int[] notes = this.GetNotes(chord);
+            int[] notes = chord.GetNotes();
+            Shuffle(notes);
             while (true)
             {
-                Shuffle(notes);
                 foreach (int note in notes)
                 {
                     if (random.Next(0, 2) == 0)
                     {
-                        Play(64 + note);
+                        Play(24 + note);
                     }
                     else
                     {
-                        Play(64 + note + 12);
+                        if (random.Next(0, 2) == 0)
+                        {
+                            Play(24 + note + 12);
+                        }
+                        else
+                        {
+                            Play(24 + note + 24);
+                        }
                     }
 
                     if (!isPlaying)
@@ -89,18 +113,12 @@ namespace MusicChordIntervalEarTraining
                     }
                     ++noteCount;
 
-                    if (noteCount >= 16)
+                    if (noteCount >= chordLength)
                     {
                         return;
                     }
                 }
             }
-        }
-
-        private int[] GetNotes(Chord chord)
-        {
-            #warning Implement
-            return new int[] { 1, 2, 3 };
         }
 
         private void Shuffle(int[] notes)
@@ -111,7 +129,7 @@ namespace MusicChordIntervalEarTraining
         private void Play(int pitch)
         {
             this.instrument.Play(pitch, 127);
-            Thread.Sleep(100);
+            Thread.Sleep(noteLength);
         }
 
         public void Stop()
