@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Sanford.Multimedia.Midi;
+using Sampler;
 
 namespace MusicChordIntervalEarTraining
 {
@@ -20,13 +20,13 @@ namespace MusicChordIntervalEarTraining
 
         private int midiChannel;
 
-        private OutputDevice outputDevice;
+        private Instrument instrument;
 
-        public MusicPlayer(Random random, OutputDevice outputDevice, int midiChannel)
+        public MusicPlayer(Random random, Instrument instrument, int midiChannel)
         {
             this.random = random;
             this.midiChannel = midiChannel;
-            this.outputDevice = outputDevice;
+            this.instrument = instrument;
         }
 
         public void Play(Progression progression)
@@ -109,19 +109,9 @@ namespace MusicChordIntervalEarTraining
         }
 
         private void Play(int pitch)
-        {            
-            ChannelMessage noteOn = this.BuildChannelMessage(pitch, ChannelCommand.NoteOn);
-            this.outputDevice.Send(noteOn);
-            Thread.Sleep(100);
-            ChannelMessage noteOff = this.BuildChannelMessage(pitch, ChannelCommand.NoteOff);
-            this.outputDevice.Send(noteOff);
-            Thread.Sleep(10);
-        }
-
-        private ChannelMessage BuildChannelMessage(int pitch, ChannelCommand command)
         {
-            ChannelMessage channelMessage = new ChannelMessage(command, midiChannel, pitch, 127);
-            return channelMessage;
+            this.instrument.Play(pitch, 127);
+            Thread.Sleep(100);
         }
 
         public void Stop()
