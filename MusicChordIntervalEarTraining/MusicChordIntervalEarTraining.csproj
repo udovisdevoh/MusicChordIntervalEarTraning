@@ -7,23 +7,12 @@
     <RootNamespace>MusicChordIntervalEarTraining</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Sampler\Sampler.csproj" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Sanford.Collections">
-      <HintPath>Sanford.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Sanford.Multimedia">
-      <HintPath>Sanford.Multimedia.dll</HintPath>
-    </Reference>
-    <Reference Include="Sanford.Multimedia.Timers">
-      <HintPath>Sanford.Multimedia.Timers.dll</HintPath>
-    </Reference>
-    <Reference Include="Sanford.Threading">
-      <HintPath>Sanford.Threading.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Sampler\Sampler.csproj" />
   </ItemGroup>
 
   <ItemGroup>

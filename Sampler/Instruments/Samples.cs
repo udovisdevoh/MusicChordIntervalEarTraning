@@ -9,8 +9,6 @@ namespace Sampler.Instruments
 {
     public class Sample
     {
-        #warning Use something like System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\mywavfile.wav"); player.Play(); instead
-
         private Sound sound;
 
         private Channel lastChannel = null;
