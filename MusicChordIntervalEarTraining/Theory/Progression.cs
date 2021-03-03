@@ -162,7 +162,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
-                    return "Minor blues";
+                    return "Minor minor third minor";
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
@@ -260,7 +260,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MajorSecond)
                 {
-                    return "Batman 1989";
+                    return "Batman 1989 (time reverse phrygian dominant viib)";
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {

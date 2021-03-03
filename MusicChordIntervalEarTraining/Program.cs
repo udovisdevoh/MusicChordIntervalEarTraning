@@ -5,6 +5,8 @@ namespace MusicChordIntervalEarTraining
 {
     class Program
     {
+        private static readonly bool isShowAnswerFirst = false;
+
         static void Main(string[] args)
         {
             const int midiChannel = 1;
@@ -22,7 +24,10 @@ namespace MusicChordIntervalEarTraining
             {
                 Progression progression = questionBuilder.BuildProgression();
 
-                Console.WriteLine(progression);
+                if (isShowAnswerFirst)
+                {
+                    Console.WriteLine(progression);
+                }
 
                 Console.WriteLine("Intervals: 0, 2b, 2, 3m, 3M, 4, 4A, 5, 6b, 6, 7m, 7M");
                 Console.WriteLine("Chord types: M, m, M7, m7, 7, dim7, aug, hdim, dim");
