@@ -14,7 +14,49 @@ namespace MusicChordIntervalEarTraining
             QuestionBuilder questionBuilder = new QuestionBuilder(random, 2, false, false);
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
-            //outputDevice.Send(new ChannelMessage(ChannelCommand.NoteOn, 1, 64, 64));
+            // Space, mixolydian b6 hindu or Major3
+            ConfusionManager confusionList = new ConfusionManager();
+            confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Major));
+
+            // Perfect fifth or perfect fourth
+            confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
+
+            // Ionadimic or Relative minor space
+            confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.MinorThird, ChordType.Minor));
+
+            // Thacrimic or augmented minor to major or minor to parallel major or time reversed 'major to relative minor of space / petrushka' or minor third third minor third
+            confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Major),
+                new ProgressionType(ChordType.Minor, IntervalType.MajorThird, ChordType.Major),
+                new ProgressionType(ChordType.Minor, IntervalType.Sixth, ChordType.Major),
+                new ProgressionType(ChordType.Minor, IntervalType.MinorThird, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.UnisonOctave, ChordType.Major));
+
+            // Time reversed ultraphrygian minor or vader
+            confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSeventh, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.FlatSixth, ChordType.Minor));
+
+            // Midgar or evil danger
+            confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.Sixth, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Minor));
+
+            // Deceptive cadence or aeolian iv or aeolian v or dorian IV
+            confusionList.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Major),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Major));
+
+            // Mixolydian v or plagal
+            confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
+
+            // Mixolydian b6 (hindu) or plagal minor or phrygian dominant viib
+            confusionList.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Minor));
 
             Instrument harpsichord = new Harpsichord();
 
@@ -61,7 +103,8 @@ namespace MusicChordIntervalEarTraining
                 }
                 else
                 {
-                    Console.WriteLine("It was " + progression.ToString());
+                    Console.WriteLine("It was");
+                    Console.WriteLine(progression.ToString());
                 }
 
                 Console.WriteLine("Ready? press enter to continue");

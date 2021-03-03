@@ -56,6 +56,13 @@ namespace MusicChordIntervalEarTraining
         {
             StringBuilder stringBuilder = new StringBuilder();
             int chordIndex = 0;
+
+            string firstModalName = this.GetModalName(chords[0].ChordType, this.intervals[0], chords[1].ChordType);
+            if (!string.IsNullOrWhiteSpace(firstModalName))
+            {
+                stringBuilder.AppendLine(firstModalName);
+            }
+
             foreach (Chord chord in chords)
             {
                 stringBuilder.AppendLine(chord.ToString());
@@ -63,15 +70,20 @@ namespace MusicChordIntervalEarTraining
                 if (chordIndex > 0)
                 {
                     stringBuilder.AppendLine(this.intervals[chordIndex - 1].ToString());
-                    string modalName = this.GetModalName(chord.ChordType, this.intervals[chordIndex - 1], chords[chordIndex - 1].ChordType);
-                    if (!string.IsNullOrWhiteSpace(modalName))
+                    if (chordIndex > 1)
                     {
-                        stringBuilder.AppendLine(modalName);
+                        string modalName = this.GetModalName(chords[chordIndex - 1].ChordType, this.intervals[chordIndex - 1], chord.ChordType);
+                        if (!string.IsNullOrWhiteSpace(modalName))
+                        {
+                            stringBuilder.AppendLine(modalName);
+                        }
                     }
                 }
 
                 ++chordIndex;
             }
+
+            stringBuilder.AppendLine(chords.First().ToString());
 
             return stringBuilder.ToString();
         }
