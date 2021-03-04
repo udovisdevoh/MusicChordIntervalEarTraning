@@ -80,9 +80,9 @@ namespace MusicChordIntervalEarTraining
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Minor),
                 new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Minor));
 
-            Instrument harpsichord = new Harpsichord();
+            Instrument instrument = new Piano();
 
-            MusicPlayer musicPlayer = new MusicPlayer(random, harpsichord, midiChannel);
+            MusicPlayer musicPlayer = new MusicPlayer(random, instrument, midiChannel);
 
             while (true)
             {

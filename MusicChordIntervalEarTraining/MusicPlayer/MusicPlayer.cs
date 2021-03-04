@@ -41,7 +41,7 @@ namespace MusicChordIntervalEarTraining
 
             int chordLength;
             int noteLength;
-            if (random.Next(0, 2) == 0)
+            /*if (random.Next(0, 2) == 0)
             {
                 chordLength = 8;
                 noteLength = 200 - 25 + random.Next(0, 50);
@@ -50,7 +50,10 @@ namespace MusicChordIntervalEarTraining
             {
                 chordLength = 12;
                 noteLength = 150 - 19 + random.Next(0, 38);
-            }
+            }*/
+
+            chordLength = 8;
+            noteLength = 200;
 
             Thread playerThread = new Thread(() =>
             {
@@ -100,21 +103,26 @@ namespace MusicChordIntervalEarTraining
             {
                 foreach (int note in notes)
                 {
-                    if (random.Next(0, 2) == 0)
-                    {
-                        Play(24 + note, noteLength);
-                    }
-                    else
+                    int parallelNoteCount = this.random.Next(0, 2) + 1;
+                    for (int noteIndex = 0; noteIndex < parallelNoteCount; ++noteIndex)
                     {
                         if (random.Next(0, 2) == 0)
                         {
-                            Play(24 + note + 12, noteLength);
+                            Play(24 + note, noteLength);
                         }
                         else
                         {
-                            Play(24 + note + 24, noteLength);
+                            if (random.Next(0, 2) == 0)
+                            {
+                                Play(24 + note + 12, noteLength);
+                            }
+                            else
+                            {
+                                Play(24 + note + 24, noteLength);
+                            }
                         }
                     }
+                    Thread.Sleep(noteLength);
 
                     if (!isPlaying)
                     {
@@ -146,7 +154,6 @@ namespace MusicChordIntervalEarTraining
         private void Play(int pitch, int noteLength)
         {
             this.instrument.Play(pitch, 127);
-            Thread.Sleep(noteLength);
         }
 
         public void Stop()
