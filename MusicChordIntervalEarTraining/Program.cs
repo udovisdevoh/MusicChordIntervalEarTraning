@@ -6,7 +6,7 @@ namespace MusicChordIntervalEarTraining
     public class Program
     {
         #warning Show or hide answers here
-        private static readonly bool isShowAnswerFirst = true;
+        private static readonly bool isShowAnswerFirst = false;
 
         static void Main(string[] args)
         {
@@ -16,6 +16,10 @@ namespace MusicChordIntervalEarTraining
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
             ConfusionManager confusionManager = new ConfusionManager();
+
+            // Minor 2 or relative minor
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
 
             // Perfect fifth or perfect fourth
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
@@ -39,10 +43,6 @@ namespace MusicChordIntervalEarTraining
             // Ionadimic or Relative minor space
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Minor),
                 new ProgressionType(ChordType.Major, IntervalType.MinorThird, ChordType.Minor));
-
-            // Minor 2 or relative minor
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MinorSecond, ChordType.Minor),
-                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
 
             // Thacrimic or augmented minor to major or minor to parallel major or time reversed 'major to relative minor of space / petrushka' or minor third third minor third
             confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.AugmentedFourthDiminishedFifthTritone, ChordType.Major),
@@ -86,10 +86,10 @@ namespace MusicChordIntervalEarTraining
 
             while (true)
             {
-                #warning Activate, set or deactivate confusion manager here
                 ProgressionType[] progressionTypes = confusionManager.GetProgressionTypes(0);
-                //Progression progression = progressionBuilder.BuildProgression();
-                Progression progression = progressionBuilder.BuildProgression(progressionTypes);
+                #warning Activate, set or deactivate confusion manager here
+                Progression progression = progressionBuilder.BuildProgression();
+                //Progression progression = progressionBuilder.BuildProgression(progressionTypes);
 
                 if (isShowAnswerFirst)
                 {

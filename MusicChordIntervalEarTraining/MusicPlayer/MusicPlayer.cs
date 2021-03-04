@@ -42,34 +42,46 @@ namespace MusicChordIntervalEarTraining
             int chordLength;
             int noteLength;
             /*if (random.Next(0, 2) == 0)
-            {
+            {*/
                 chordLength = 8;
                 noteLength = 200 - 25 + random.Next(0, 50);
-            }
+            /*}
             else
             {
                 chordLength = 12;
                 noteLength = 150 - 19 + random.Next(0, 38);
             }*/
 
-            chordLength = 8;
-            noteLength = 200;
+
+
+            int octaveOffset = (random.Next(0, 2) + 2) * 12;
+
+            int rythmSeed = random.Next();
 
             Thread playerThread = new Thread(() =>
             {
                 while (isPlaying)
                 {
-                    foreach (Chord chord in progression)
+                    for (int loopIndex = 0; loopIndex < 1; ++loopIndex)
                     {
-                        this.Play(chord, chordLength, noteLength);
-
-                        if (!isPlaying)
+                        foreach (Chord chord in progression)
                         {
-                            break;
+                            int[] notes = chord.GetNotes();
+                            Shuffle(notes, rythmSeed);
+
+                            this.Play(chordLength, noteLength, octaveOffset, rythmSeed, notes);
+
+                            if (!isPlaying)
+                            {
+                                break;
+                            }
                         }
                     }
 
-                    this.Play(progression.First(), chordLength + 1, noteLength);
+                    int[] lastNotes = progression.First().GetNotes();
+                    Shuffle(lastNotes, rythmSeed);
+
+                    this.Play(chordLength + 1, noteLength, octaveOffset, rythmSeed, lastNotes);
                     this.Silence(chordLength - 1, noteLength);
                 }
 
@@ -94,31 +106,34 @@ namespace MusicChordIntervalEarTraining
             }
         }
 
-        private void Play(Chord chord, int chordLength, int noteLength)
+        private void Play(int chordLength, int noteLength, int octaveOffset, int rythmSeed, int[] notes)
         {
+            Random rythmRandom = new Random(rythmSeed);
+
             int noteCount = 0;
-            int[] notes = chord.GetNotes();
-            Shuffle(notes);
             while (true)
             {
                 foreach (int note in notes)
                 {
-                    int parallelNoteCount = this.random.Next(0, 2) + 1;
-                    for (int noteIndex = 0; noteIndex < parallelNoteCount; ++noteIndex)
+                    if (noteCount == 0 || noteCount % 2 == 0 || random.Next(0, 2) != 0)
                     {
-                        if (random.Next(0, 2) == 0)
+                        int parallelNoteCount = this.random.Next(0, 2) + 1;
+                        for (int noteIndex = 0; noteIndex < parallelNoteCount; ++noteIndex)
                         {
-                            Play(24 + note, noteLength);
-                        }
-                        else
-                        {
-                            if (random.Next(0, 2) == 0)
+                            if (rythmRandom.Next(0, 2) == 0)
                             {
-                                Play(24 + note + 12, noteLength);
+                                Play(note + octaveOffset, noteLength);
                             }
                             else
                             {
-                                Play(24 + note + 24, noteLength);
+                                if (rythmRandom.Next(0, 2) == 0)
+                                {
+                                    Play(note + 12 + octaveOffset, noteLength);
+                                }
+                                else
+                                {
+                                    Play(note + 24 + octaveOffset, noteLength);
+                                }
                             }
                         }
                     }
@@ -138,12 +153,14 @@ namespace MusicChordIntervalEarTraining
             }
         }
 
-        private void Shuffle(int[] notes)
+        private void Shuffle(int[] notes, int rythmSeed)
         {
+            Random shuffleRandom = new Random(rythmSeed);
+
             for (int index = 0; index < notes.Length; ++index)
             {
                 int noteAtIndex = notes[index];
-                int randomIndex = random.Next(0, notes.Length);
+                int randomIndex = shuffleRandom.Next(0, notes.Length);
                 int noteAtRandomIndex = notes[randomIndex];
 
                 notes[index] = noteAtRandomIndex;
