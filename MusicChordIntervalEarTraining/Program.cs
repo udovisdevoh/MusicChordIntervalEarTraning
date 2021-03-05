@@ -17,22 +17,27 @@ namespace MusicChordIntervalEarTraining
 
             ConfusionManager confusionManager = new ConfusionManager();
 
-            // All Ionian major to minor
+            // All diatonic major to minor + extras
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
                 new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor),
-                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Minor));
+                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Minor), // Mixolydian v
+                new ProgressionType(ChordType.Major, IntervalType.MajorSeventh, ChordType.Minor), // Lydian vii
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Minor)); // Minor plagal
+
+            // All diatonic major to major + extras: Done!!!
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.MinorSecond, ChordType.Major), // Phrygian Dominant
+                new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major)); // Mixolydian b6
 
             // All diatonic minor to minor: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
-
-            // All diatonic major to major: Done!!!
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
-                new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Major),
-                new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
-                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
 
             // Perfect fifth or perfect fourth: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
