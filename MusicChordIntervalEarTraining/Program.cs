@@ -18,7 +18,10 @@ namespace MusicChordIntervalEarTraining
             ConfusionManager confusionManager = new ConfusionManager();
 
             // Training mode
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major));
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
 
             // Perfect fifth or perfect fourth
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
