@@ -52,7 +52,7 @@ namespace MusicChordIntervalEarTraining
             int noteType1 = random.Next(0, 12);
             int noteType2 = noteType1 + (int)progressionType.IntervalType;
 
-            while (noteType2 > 12)
+            while (noteType2 >= 12)
             {
                 noteType2 -= 12;
             }

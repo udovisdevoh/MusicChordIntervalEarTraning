@@ -41,7 +41,7 @@ namespace MusicChordIntervalEarTraining
                     IntervalType interval = this.intervalParser.Parse(token);
                     pitchOffset += (int)interval;
 
-                    while (pitchOffset > 12)
+                    while (pitchOffset >= 12)
                     {
                         pitchOffset -= 12;
                     }

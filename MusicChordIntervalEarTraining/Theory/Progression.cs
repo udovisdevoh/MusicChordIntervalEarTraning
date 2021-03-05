@@ -97,7 +97,7 @@ namespace MusicChordIntervalEarTraining
                 distance += 12;
             }
 
-            while (distance > 12)
+            while (distance >= 12)
             {
                 distance -= 12;
             }

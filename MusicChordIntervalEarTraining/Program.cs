@@ -6,7 +6,7 @@ namespace MusicChordIntervalEarTraining
     public class Program
     {
         #warning Show or hide answers here
-        private static readonly bool isShowAnswerFirst = false;
+        private static readonly bool isShowAnswerFirst = true;
 
         static void Main(string[] args)
         {
@@ -17,13 +17,16 @@ namespace MusicChordIntervalEarTraining
 
             ConfusionManager confusionManager = new ConfusionManager();
 
-            // Minor 2 or relative minor
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
-                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
+            // Plagal only
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
 
             // Perfect fifth or perfect fourth
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
+
+            // Minor 2 or relative minor
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
 
             // Space, mixolydian b6 hindu or Major3 or phrygian dominant or Ionadimic
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
@@ -88,8 +91,8 @@ namespace MusicChordIntervalEarTraining
             {
                 ProgressionType[] progressionTypes = confusionManager.GetProgressionTypes(0);
                 #warning Activate, set or deactivate confusion manager here
-                Progression progression = progressionBuilder.BuildProgression();
-                //Progression progression = progressionBuilder.BuildProgression(progressionTypes);
+                //Progression progression = progressionBuilder.BuildProgression();
+                Progression progression = progressionBuilder.BuildProgression(progressionTypes);
 
                 if (isShowAnswerFirst)
                 {
