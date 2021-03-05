@@ -33,6 +33,10 @@ namespace MusicChordIntervalEarTraining
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
 
+            // Aeolian v or iv: Done!!!
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
+
             // Minor 2, minor or relative minor
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
                 new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
