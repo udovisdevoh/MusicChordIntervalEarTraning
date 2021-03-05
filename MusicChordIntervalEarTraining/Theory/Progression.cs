@@ -221,7 +221,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MajorSecond)
                 {
-                    return "Ionian/Mixolydian minor ii";
+                    return "Minor ii";
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
