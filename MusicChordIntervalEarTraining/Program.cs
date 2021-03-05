@@ -17,7 +17,12 @@ namespace MusicChordIntervalEarTraining
 
             ConfusionManager confusionManager = new ConfusionManager();
 
-            // All diatonic minor to minor
+            // All Ionian major to minor
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Minor));
+
+            // All diatonic minor to minor: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
@@ -36,10 +41,6 @@ namespace MusicChordIntervalEarTraining
             // Aeolian v or iv: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
-
-            // Minor 2, minor or relative minor
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
-                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
 
             // Space, mixolydian b6 hindu or Major3 or phrygian dominant or Ionadimic
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
