@@ -17,17 +17,23 @@ namespace MusicChordIntervalEarTraining
 
             ConfusionManager confusionManager = new ConfusionManager();
 
-            // Training mode
+            // All diatonic minor to minor
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
+
+            // All diatonic major to major: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
 
-            // Perfect fifth or perfect fourth
+            // Perfect fifth or perfect fourth: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major));
 
-            // Minor 2 or relative minor
+            // Minor 2, minor or relative minor
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
                 new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor));
 
