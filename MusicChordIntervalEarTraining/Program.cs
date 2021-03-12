@@ -8,6 +8,8 @@ namespace MusicChordIntervalEarTraining
         #warning Show or hide answers here
         private static readonly bool isShowAnswerFirst = true;
 
+        private static readonly bool isAutoPlay = true;
+
         static void Main(string[] args)
         {
             const int midiChannel = 1;
@@ -17,14 +19,6 @@ namespace MusicChordIntervalEarTraining
 
             ConfusionManager confusionManager = new ConfusionManager();
 
-            // All diatonic major to minor + extras
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
-                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor),
-                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Minor),
-                new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Minor), // Mixolydian v
-                new ProgressionType(ChordType.Major, IntervalType.MajorSeventh, ChordType.Minor), // Lydian vii
-                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Minor)); // Minor plagal
-
             // All diatonic major to major + extras: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Major),
@@ -32,6 +26,14 @@ namespace MusicChordIntervalEarTraining
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.MinorSecond, ChordType.Major), // Phrygian Dominant
                 new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major)); // Mixolydian b6
+
+            // All diatonic major to minor + extras
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Minor),
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Minor), // Mixolydian v
+                new ProgressionType(ChordType.Major, IntervalType.MajorSeventh, ChordType.Minor), // Lydian vii
+                new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Minor)); // Minor plagal
 
             // All diatonic minor to minor: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
@@ -127,42 +129,49 @@ namespace MusicChordIntervalEarTraining
 
                 musicPlayer.Play(progression);
 
-                string input = Console.ReadLine();
-
-                musicPlayer.Stop();
-
-                if (input.ToUpperInvariant().Contains("EXIT"))
+                if (isAutoPlay)
                 {
-                    break;
+                    musicPlayer.WaitUntilFinishedRepeat(1);
                 }
-
-                if (!string.IsNullOrWhiteSpace(input))
+                else
                 {
-                    Progression parsedInput = inputParser.Parse(input, progression.PitchOffset);
+                    string input = Console.ReadLine();
 
-                    Console.WriteLine("Parsed as " + parsedInput.ToString());
+                    musicPlayer.Stop();
 
-                    if (progression.ToString() == parsedInput.ToString())
+                    if (input.ToUpperInvariant().Contains("EXIT"))
                     {
-                        Console.WriteLine("MATCH!");
+                        break;
                     }
-                    else
+
+                    if (!string.IsNullOrWhiteSpace(input))
                     {
-                        Console.WriteLine("WRONG, it is " + progression.ToString());
+                        Progression parsedInput = inputParser.Parse(input, progression.PitchOffset);
+
+                        Console.WriteLine("Parsed as " + parsedInput.ToString());
+
+                        if (progression.ToString() == parsedInput.ToString())
+                        {
+                            Console.WriteLine("MATCH!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("WRONG, it is " + progression.ToString());
+                        }
                     }
-                }
-                else if (!isShowAnswerFirst)
-                {
-                    Console.WriteLine("It was");
-                    Console.WriteLine(progression.ToString());
+                    else if (!isShowAnswerFirst)
+                    {
+                        Console.WriteLine("It was");
+                        Console.WriteLine(progression.ToString());
 
-                    Console.WriteLine("Ready? press enter to continue");
-                    Console.ReadLine();
-                }
+                        Console.WriteLine("Ready? press enter to continue");
+                        Console.ReadLine();
+                    }
 
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                }
             }
         }
     }
