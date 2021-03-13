@@ -10,14 +10,25 @@ namespace MusicChordIntervalEarTraining
 
         private static readonly bool isAutoPlay = true;
 
+        private static readonly int desiredRepeatCount = 2;
+
         static void Main(string[] args)
         {
-            const int midiChannel = 1;
             Random random = new Random();
             ProgressionBuilder progressionBuilder = new ProgressionBuilder(random, 2, false, false);
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
             ConfusionManager confusionManager = new ConfusionManager();
+
+            // Training
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor));
+
+            // All diatonic minor to minor: Done!!!
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
 
             // All diatonic major to major + extras: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
@@ -34,12 +45,6 @@ namespace MusicChordIntervalEarTraining
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Minor), // Mixolydian v
                 new ProgressionType(ChordType.Major, IntervalType.MajorSeventh, ChordType.Minor), // Lydian vii
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Minor)); // Minor plagal
-
-            // All diatonic minor to minor: Done!!!
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
-                new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
-                new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
-                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
 
             // Perfect fifth or perfect fourth: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),
@@ -106,7 +111,7 @@ namespace MusicChordIntervalEarTraining
 
             Instrument instrument = new Piano();
 
-            MusicPlayer musicPlayer = new MusicPlayer(random, instrument, midiChannel);
+            MusicPlayer musicPlayer = new MusicPlayer(random, instrument);
 
             while (true)
             {
@@ -131,7 +136,7 @@ namespace MusicChordIntervalEarTraining
 
                 if (isAutoPlay)
                 {
-                    musicPlayer.WaitUntilFinishedRepeat(1);
+                    musicPlayer.WaitUntilFinishedRepeat(2);
                 }
                 else
                 {

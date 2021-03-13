@@ -18,16 +18,13 @@ namespace MusicChordIntervalEarTraining
 
         private Random random;
 
-        private int midiChannel;
-
         private Instrument instrument;
 
-        private int playCount = 0;
+        private int currentPlayCount = 0;
 
-        public MusicPlayer(Random random, Instrument instrument, int midiChannel)
+        public MusicPlayer(Random random, Instrument instrument)
         {
             this.random = random;
-            this.midiChannel = midiChannel;
             this.instrument = instrument;
         }
 
@@ -86,7 +83,7 @@ namespace MusicChordIntervalEarTraining
                     this.Play(chordLength + 1, noteLength, octaveOffset, rythmSeed, lastNotes);
                     this.Silence(chordLength - 2, noteLength);
 
-                    ++this.playCount;
+                    ++this.currentPlayCount;
 
                     this.Silence(1, noteLength);
                 }
@@ -183,7 +180,7 @@ namespace MusicChordIntervalEarTraining
         {
             lock (this.playerLock)
             {
-                this.playCount = 0;
+                this.currentPlayCount = 0;
                 this.isPlaying = false;
             }
 
@@ -195,9 +192,9 @@ namespace MusicChordIntervalEarTraining
 
         public void WaitUntilFinishedRepeat(int repeatCount)
         {
-            while (this.playCount < repeatCount)
+            while (this.currentPlayCount < repeatCount)
             {
-                Thread.Sleep(10);
+                Thread.Sleep(5);
             }
             Stop();
         }
