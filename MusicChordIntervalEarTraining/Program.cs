@@ -118,7 +118,10 @@ namespace MusicChordIntervalEarTraining
 
                 if (isShowAnswerFirst)
                 {
-                    Console.Clear();
+                    if (!isAutoPlay)
+                    {
+                        Console.Clear();
+                    }
                     Console.WriteLine(progression);
                 }
                 else
