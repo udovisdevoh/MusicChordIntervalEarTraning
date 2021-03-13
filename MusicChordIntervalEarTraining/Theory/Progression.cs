@@ -151,7 +151,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.FlatSeventh)
                 {
-                    return "Mixolydian b7";
+                    return "Mixolydian";
                 }
                 else if (intervalType == IntervalType.MajorSeventh)
                 {

@@ -20,16 +20,6 @@ namespace MusicChordIntervalEarTraining
 
             ConfusionManager confusionManager = new ConfusionManager();
 
-            // Training
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
-                new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor));
-
-            // All diatonic minor to minor: Done!!!
-            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
-                new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
-                new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
-                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
-
             // All diatonic major to major + extras: Done!!!
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Major),
@@ -37,6 +27,12 @@ namespace MusicChordIntervalEarTraining
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFourth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.MinorSecond, ChordType.Major), // Phrygian Dominant
                 new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major)); // Mixolydian b6
+
+            // All diatonic minor to minor: Done!!!
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
+                new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor));
 
             // All diatonic major to minor + extras
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Minor),
