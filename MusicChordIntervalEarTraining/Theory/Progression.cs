@@ -127,7 +127,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
-                    return "Creep / Santeria";
+                    return "Major 3 (hint: contains Maj7)";
                 }
                 else if (intervalType == IntervalType.PerfectFourth)
                 {
@@ -143,7 +143,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.FlatSixth)
                 {
-                    return "Mixolydian b6 (Hindu) / Mario / Blues / Rock VIb";
+                    return "Mixolydian b6 (hint: contains m3)";
                 }
                 else if (intervalType == IntervalType.Sixth)
                 {

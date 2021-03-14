@@ -107,6 +107,19 @@ namespace MusicChordIntervalEarTraining
                     noteList.Add((int)NoteType.G + (int)noteType);
                     noteList.Add((int)NoteType.ASharp + (int)noteType);
                 }
+                else if (chordType == ChordType.Unison)
+                {
+                    noteList.Add((int)NoteType.C + (int)noteType);
+                    noteList.Add((int)NoteType.C + (int)noteType);
+                    noteList.Add((int)NoteType.C + (int)noteType);
+                }
+                else if (chordType == ChordType.Fifth)
+                {
+                    noteList.Add((int)NoteType.C + (int)noteType);
+                    noteList.Add((int)NoteType.G + (int)noteType);
+                    noteList.Add((int)NoteType.C + (int)noteType);
+                    noteList.Add((int)NoteType.G + (int)noteType);
+                }
 
                 this.notes = noteList.ToArray();
             }

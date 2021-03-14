@@ -50,6 +50,7 @@ namespace MusicChordIntervalEarTraining
             Progression progression = new Progression();
 
             int noteType1 = random.Next(0, 12);
+            //noteType1 = 0;
             int noteType2 = noteType1 + (int)progressionType.IntervalType;
 
             while (noteType2 >= 12)

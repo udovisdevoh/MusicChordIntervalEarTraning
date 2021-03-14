@@ -68,6 +68,7 @@ namespace Sampler
         public void Play(int pitch, int velocity)
         {
             pitch += this.GetOffset();
+            pitch += 3; // Pitch correction WTF
 
             while (pitch > this.maxSample)
             {
