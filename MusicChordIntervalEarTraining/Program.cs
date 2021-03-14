@@ -19,19 +19,23 @@ namespace MusicChordIntervalEarTraining
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
             ConfusionManager confusionManager = new ConfusionManager();
+            
+            // m3 or 6th: 
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.MinorThird, ChordType.Major));
 
-            // Major 3rd or Flat 6
+            // Major 3rd or Flat 6: Done
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Major));
 
-            // All diatonic minor to minor + extras:
+            // All diatonic minor to minor + extras: Done
             confusionManager.AddConfusion(new ProgressionType(ChordType.Minor, IntervalType.MajorSecond, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.FlatSeventh, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFifth, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.PerfectFourth, ChordType.Minor),
                 new ProgressionType(ChordType.Minor, IntervalType.FlatSixth, ChordType.Minor)); // Flat 6 minor (hm's relative major's plagal minor)
 
-            // All diatonic major to major + extras: 
+            // All diatonic major to major + extras: Done
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.MajorSecond, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.FlatSeventh, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.PerfectFifth, ChordType.Major),

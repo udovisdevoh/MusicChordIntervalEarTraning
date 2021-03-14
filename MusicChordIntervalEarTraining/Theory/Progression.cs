@@ -123,7 +123,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
-                    return "Blues / Rock IIIb";
+                    return "Blues / Rock IIIb (hint: contains m3 and flat7)";
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
@@ -147,7 +147,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.Sixth)
                 {
-                    return "Picardy 3rd";
+                    return "Picardy 3rd (hint: contains m2)";
                 }
                 else if (intervalType == IntervalType.FlatSeventh)
                 {
