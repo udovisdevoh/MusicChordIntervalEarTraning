@@ -19,10 +19,18 @@ namespace MusicChordIntervalEarTraining
             InputParser inputParser = new InputParser(new IntervalParser(), new ChordTypeParser());
 
             ConfusionManager confusionManager = new ConfusionManager();
-            
+
             // m3 or 6th: 
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Major),
                 new ProgressionType(ChordType.Major, IntervalType.MinorThird, ChordType.Major));
+
+            // m3 or Flat 6: 
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.MinorThird, ChordType.Major));
+
+            // Major 3rd or sixth: 
+            confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.Sixth, ChordType.Major),
+                new ProgressionType(ChordType.Major, IntervalType.MajorThird, ChordType.Major));
 
             // Major 3rd or Flat 6: Done
             confusionManager.AddConfusion(new ProgressionType(ChordType.Major, IntervalType.FlatSixth, ChordType.Major),
