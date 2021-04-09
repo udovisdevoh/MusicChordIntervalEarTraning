@@ -123,7 +123,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
-                    return "Blues / Rock IIIb (hint: contains m3 and flat7)";
+                    return "Blues / Rock IIIb (hint: contains m3 and flat7) (dominant of mixolydian b6) (lydian II of phrygian)";
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
@@ -174,7 +174,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
-                    return "Minor minor (blues) third minor";
+                    return "Minor minor (blues) third minor (phrygian viib of aeolian iv)";
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
@@ -217,7 +217,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorSecond)
                 {
-                    return "Ultraphrygian major";
+                    return "Ultraphrygian major (plagal minor of mixolydian b6)";
                 }
                 else if (intervalType == IntervalType.MajorSecond)
                 {
@@ -225,7 +225,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
-                    return "Major to relative minor of space / petrushka chord";
+                    return "Major to relative minor of space / petrushka chord (plagal minor of mixolydian b7)";
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
@@ -272,7 +272,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MajorSecond)
                 {
-                    return "Batman 1989 (time reverse phrygian dominant viib)";
+                    return "Batman 1989 (time reverse phrygian dominant viib), (secondary dominant of harmonic minor cadence)";
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
@@ -280,7 +280,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
-                    return "Augmented (minor to major)";
+                    return "Augmented (minor to major) (phrygian of relative major) (-> phrygian = dorian V)";
                 }
                 else if (intervalType == IntervalType.PerfectFourth)
                 {
