@@ -178,7 +178,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
-                    return "Time reversed vader";
+                    return "Time reversed vader (plagal minor of deceptive VIIb)";
                 }
                 else if (intervalType == IntervalType.PerfectFourth)
                 {
