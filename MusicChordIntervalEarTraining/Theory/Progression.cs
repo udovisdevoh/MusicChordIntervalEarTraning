@@ -174,7 +174,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
-                    return "Minor minor third minor";
+                    return "Minor minor (blues) third minor";
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
@@ -237,7 +237,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.AugmentedFourthDiminishedFifthTritone)
                 {
-                    return "Ionadimic";
+                    return "Ionadimic (plagal minor of lydian II), (x -> phrygian = perfect cadence of root)";
                 }
                 else if (intervalType == IntervalType.PerfectFifth)
                 {
@@ -288,7 +288,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.AugmentedFourthDiminishedFifthTritone)
                 {
-                    return "Thacrimic";
+                    return "Thacrimic (+perfect -> phrygian) (+phrygian -> perfect)";
                 }
                 else if (intervalType == IntervalType.PerfectFifth)
                 {
