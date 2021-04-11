@@ -174,7 +174,7 @@ namespace MusicChordIntervalEarTraining
                 }
                 else if (intervalType == IntervalType.MinorThird)
                 {
-                    return "Minor minor (blues) third minor (phrygian viib of aeolian iv)";
+                    return "Minor minor (blues) third minor (phrygian viib of aeolian iv) (phrygian dominant viib of plagal IV)";
                 }
                 else if (intervalType == IntervalType.MajorThird)
                 {
